@@ -1,0 +1,144 @@
+/* components.css start*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+/* components.css end */
+
+
+/* login.css/register.css start */
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+	background: #5372f0;
+}
+
+.container{
+	width: 23.75rem; /* 380px */ 
+	background: #fff;
+	padding: 2.5rem 1.875rem 3.125rem 1.875rem; /* 40px 30px 50px 30px */
+	border-radius: 0.3125rem; /* 5px */
+}
+
+.container header{
+	font-size: 35px;
+	font-weight: 600;
+}
+
+.container form{
+	margin: 40px 0;
+}
+
+form .field{
+	width: 100%;
+	margin-bottom: 20px;
+	transition: transform 0.3s ease;
+}
+
+form .field.shake{
+	animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+	0%, 100% {
+		 transform: translateX(0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		 transform: translateX(-8px);
+	}
+
+	20%, 40%, 60%, 80% {
+		 transform: translateX(8px);
+	}
+}
+
+
+form .field .input-area{
+	position: relative;
+}
+
+form input{
+	height: 50px;
+	width: 100%;
+	outline: none;
+	padding: 0 45px;
+	font-size: 18px;
+	border-radius: 5px;
+	border: 1px solid #bfbfbf;
+	border-bottom-width: 2px;
+}
+
+form .field.error input{
+	border-color: #dc3545;
+}
+
+form input::placeholder{
+	color: #bfbfbf;
+	font-size: 17px;
+}
+
+form .field i{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+form .field .icon{
+	left: 15px;
+	color: #bfbfbf;
+}
+
+form .field .error-icon{
+	right: 15px;
+	color: #dc3545;
+}
+
+form .field .error-txt{
+	color: #dc3545;
+	margin-top: 5px;
+	text-align: left;
+}
+
+form .field .error{
+	display: none;
+}
+
+form .field.error .error{
+	display: block;
+}
+
+form .forgot-pass-link{
+	text-align: left;
+	margin-top: -10px;
+}
+
+.container a{
+	color: #5372f0;
+	text-decoration: none;
+}
+
+.container a:hover{
+	text-decoration: underline;
+}
+
+form input[type="submit"]{
+	margin-top: 30px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	background: #5372f0;
+	transition: backgroud 0.2s ease;
+}
+
+form input[type="submit"]:hover{
+	background: #2c52ed;
+}
+/* login.css/register.css end */

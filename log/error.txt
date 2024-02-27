@@ -1,0 +1,1 @@
+Error: [2] Undefined variable $no - /var/www/html/projects/MajorProject/php/ini.php: Line: 13

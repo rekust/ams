@@ -1,0 +1,26 @@
+.container {
+	width: auto;
+	padding: 3rem;
+}
+
+.all-fields {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 2rem;
+}
+
+form input[type="submit"]{
+	margin-top: 30px;
+	width: 20vw;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	background: #5372f0;
+	transition: backgroud 0.2s ease;
+}
+
+.sub-header {
+	font-size: 1.5rem;
+	padding: .8rem;
+}
