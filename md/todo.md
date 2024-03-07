@@ -9,4 +9,5 @@
 - add functionality on admin panel for exporting the whole data for current session in a csv and json format
 - create separate table for academic sessions, export, compress and store it just in case
 - otp confirmation while registering and logging
+- add separate resources tab for useful resources posted by admins or teachers
 - 
