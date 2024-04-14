@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $str);
   <?php include("../html/navTeacher.html"); ?>
 
   <p class="header"><?php echo $_SESSION['user_name'] ?>'s Dashboard</p>
-  <p class="list-header">Verified Student List</p>
+  <p class="list-header">Unverified Student List</p>
   <div class="container">
     <?php while ($row = mysqli_fetch_array($result)) { ?>
       <div class="student">

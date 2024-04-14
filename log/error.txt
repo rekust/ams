@@ -1,1 +1,1 @@
-Error: [2] Undefined array key "user_id" - /var/www/html/projects/MajorProject/php/profile.php: Line: 6
+Error: [2] Undefined array key "ration_card" - /var/www/html/projects/MajorProject/php/panel_v.php: Line: 95
