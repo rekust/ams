@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.chart-header {
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.chart-sub-header{
+  text-align: left;
+  padding: 0 0 2rem 2rem;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+#columnchart_material {
+  margin: 1rem auto;
+  width: 80vw;
+  height: 70vh;
+}
+

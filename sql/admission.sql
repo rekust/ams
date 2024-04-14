@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2023 at 04:39 PM
+-- Generation Time: Apr 14, 2024 at 05:02 PM
 -- Server version: 10.5.23-MariaDB
--- PHP Version: 8.2.13
+-- PHP Version: 8.2.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `admission`
 --
-CREATE DATABASE IF NOT EXISTS `admission` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `admission`;
 
 -- --------------------------------------------------------
 
@@ -34,7 +32,7 @@ CREATE TABLE `students` (
   `student_name` varchar(255) NOT NULL,
   `father_name` varchar(255) DEFAULT NULL,
   `mother_name` varchar(255) DEFAULT NULL,
-  `phone` int(10) DEFAULT NULL,
+  `phone` int(12) DEFAULT NULL,
   `roll_number` int(20) NOT NULL,
   `rank` int(10) NOT NULL,
   `DOB` date NOT NULL,
@@ -45,21 +43,24 @@ CREATE TABLE `students` (
   `birth_certificate` varchar(255) NOT NULL,
   `ration_card` varchar(255) NOT NULL,
   `caste_certificate` varchar(255) DEFAULT NULL,
-  `status_id` int(10) NOT NULL DEFAULT 1
+  `status_id` int(10) NOT NULL DEFAULT 1,
+  `reg_date` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`user_id`, `student_name`, `father_name`, `mother_name`, `phone`, `roll_number`, `rank`, `DOB`, `aadhaar`, `PRTC`, `marksheet`, `admit_card`, `birth_certificate`, `ration_card`, `caste_certificate`, `status_id`) VALUES
-(1, 'user', 'f user', 'm user', 123456789, 1, 7, '2000-01-01', 'https://myaadhaar.uidai.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 2),
-(3, 'Tamojoy Chanda', 'Supratim Chanda', 'Sampita Neogi', 2147483647, 12, 4, '2004-08-21', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://edistrict.tripura.gov.in/', 'https://www.youtube.com/', 'https://www.youtube.com/', NULL, 2),
-(4, 'Aaniketh Ghosh', 'Aaniketh\'s Father', 'Aaniketh\'s Mother', 2147483647, 123, 21, '2004-11-14', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://edistrict.tripura.gov.in/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 3),
-(5, 'Aisrang Debbarma', 'Aisrang\'s Father', 'Airrang\'s Mother', 123987456, 1234, 55, '2005-05-06', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://edistrict.tripura.gov.in/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 3),
-(6, 'Manidipa', 'MFather', 'MMother', 92043098, 12345, 34, '2004-09-14', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'http://localhost:3000/MajorProject/completeProfile.html', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'https://edistrict.tripura.gov.in/', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 2),
-(9, 'Tester Name', 'Tester Father', 'Tester Mother', 1111111111, 1111111111, 111, '2000-11-11', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://edistrict.tripura.gov.in/', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 3),
-(10, 'Khakachang Tripura', 'Father', 'Mother', 1234567890, 1234567890, 12, '2000-01-01', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 1);
+INSERT INTO `students` (`user_id`, `student_name`, `father_name`, `mother_name`, `phone`, `roll_number`, `rank`, `DOB`, `aadhaar`, `PRTC`, `marksheet`, `admit_card`, `birth_certificate`, `ration_card`, `caste_certificate`, `status_id`, `reg_date`) VALUES
+(1, 'user', 'f user', 'm user', 123456789, 1, 7, '2000-01-01', 'https://myaadhaar.uidai.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 3, '2024-04-14'),
+(3, 'Tamojoy Chanda', 'Supratim Chanda', 'Sampita Neogi', 2147483647, 12, 4, '2004-08-21', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://edistrict.tripura.gov.in/', 'https://www.youtube.com/', 'https://www.youtube.com/', NULL, 2, '2024-04-14'),
+(4, 'Aaniketh Ghosh', 'Aaniketh\'s Father', 'Aaniketh\'s Mother', 2147483647, 123, 21, '2004-11-14', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://edistrict.tripura.gov.in/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 2, '2024-04-14'),
+(5, 'Aisrang Debbarma', 'Aisrang\'s Father', 'Airrang\'s Mother', 123987456, 1234, 55, '2005-05-06', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://edistrict.tripura.gov.in/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 3, '2024-04-14'),
+(6, 'Manidipa', 'MFather', 'MMother', 92043098, 12345, 34, '2004-09-14', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'http://localhost:3000/MajorProject/completeProfile.html', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'https://edistrict.tripura.gov.in/', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 2, '2024-04-14'),
+(9, 'Tester Name', 'Tester Father', 'Tester Mother', 1111111111, 1111111111, 111, '2000-11-11', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://edistrict.tripura.gov.in/', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 2, '2024-04-14'),
+(10, 'Khakachang Tripura', 'Father', 'Mother', 1234567890, 1234567890, 12, '2000-01-01', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 2, '2024-04-14'),
+(12, 'Student Name', 'Father Name', 'Mother Name', 898989898, 2139580, 34, '2004-01-01', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 3, '2024-04-14'),
+(19, 'testerName surname', 'testerFather', 'testerMother', 1234567890, 10, 10, '2000-01-01', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 2, '2024-04-14');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,9 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_type_id`, `email`, `password`)
 (6, 'Manidipa Das', 1, 'manidipa@mail.com', 'Password@12'),
 (9, 'Tester', 1, 'tester@mail.com', 'password@A1'),
 (10, 'Khakachang Tripura', 1, 'khakachang@mail.com', 'password@A1'),
-(11, 'new user', 1, 'new@mail.com', 'password@A1');
+(12, 'Student', 1, 'student@mail.com', 'Password@123'),
+(17, 'USerName', 1, 'name@mail.com', 'Password@123'),
+(19, 'tester1', 1, 'emailfortester@mail.com', 'Password@123');
 
 -- --------------------------------------------------------
 
@@ -138,15 +141,15 @@ INSERT INTO `user_type` (`user_type_id`, `user_type`) VALUES
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`user_id`,`student_name`),
-  ADD UNIQUE KEY `aadhaar` (`aadhaar`),
-  ADD UNIQUE KEY `PRTC` (`PRTC`),
-  ADD UNIQUE KEY `12th_marksheet` (`marksheet`),
-  ADD UNIQUE KEY `birth_certificate` (`birth_certificate`),
-  ADD UNIQUE KEY `ration_card` (`ration_card`),
   ADD UNIQUE KEY `roll_number` (`roll_number`),
-  ADD UNIQUE KEY `cast_certificate` (`caste_certificate`),
   ADD KEY `user_id` (`user_id`),
-  ADD KEY `status_id` (`status_id`);
+  ADD KEY `status_id` (`status_id`),
+  ADD KEY `aadhaar` (`aadhaar`) USING BTREE,
+  ADD KEY `PRTC` (`PRTC`) USING BTREE,
+  ADD KEY `12th_marksheet` (`marksheet`) USING BTREE,
+  ADD KEY `birth_certificate` (`birth_certificate`) USING BTREE,
+  ADD KEY `ration_card` (`ration_card`) USING BTREE,
+  ADD KEY `cast_certificate` (`caste_certificate`) USING BTREE;
 
 --
 -- Indexes for table `student_status`
@@ -179,7 +182,7 @@ ALTER TABLE `user_type`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
