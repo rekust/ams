@@ -3,7 +3,7 @@ include("../php/ini.php");
 
 session_start();
 include_once 'database.php';
-$str = "select s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.caste_certificate from user u join students s using (user_id) where user_id = {$_SESSION['user_id']};";
+$str = "select s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.ration_card, s.caste_certificate from user u join students s using (user_id) where user_id = {$_SESSION['user_id']};";
 $result = mysqli_query($conn, $str);
 $row = mysqli_fetch_array($result);
 ?>

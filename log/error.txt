@@ -1,1 +1,1 @@
-Error: [2] Undefined variable $no - /var/www/html/projects/MajorProject/php/ini.php: Line: 13
+Error: [2] Undefined array key "user_id" - /var/www/html/projects/MajorProject/php/profile.php: Line: 6
