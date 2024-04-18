@@ -1,13 +1,8 @@
 - create log file for errors: `done`
-- make an admin panel
-- add message box functionality for adding reason in teachers panel - make changes in db  
+- make an admin panel: `done`
+- add message box functionality for adding reason in teachers panel
 - add notifications tab for students
-- notification on phone and email for the students
-- add conversion tab for students as well as add separate tab for conversion - need quite a good amount of space for that as many users can upload parallely and will be in db for 10 mins (max)
+- notification on phone or email
 - add functionality to re-upload documents, re-apply the application
 - add option for photo upload for profile
-- add functionality on admin panel for exporting the whole data for current session in a csv and json format
-- create separate table for academic sessions, export, compress and store it just in case
-- otp confirmation while registering and logging
-- add separate resources tab for useful resources posted by admins or teachers
-- 
+- add functionality on admin panel for exporting the whole data for current session in a csv: `done`
