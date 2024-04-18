@@ -19,7 +19,7 @@ body {
   font-size: 1.5rem;
 }
 
-.chart-sub-header{
+.chart-sub-header {
   text-align: left;
   padding: 0 0 2rem 2rem;
   font-size: 1.2rem;
@@ -32,3 +32,312 @@ body {
   height: 70vh;
 }
 
+.container {
+  width: auto; /* 380px */
+  background: #fff;
+  padding: 1rem 1rem 1rem 2rem; /* 40px 30px 50px 30px */
+  border-radius: 0.3125rem; /* 5px */
+  display: flex;
+}
+
+.container form {
+  width: 50vw;
+  gap: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+form .field {
+  width: 100%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+form .field .input-area {
+  position: relative;
+}
+
+form input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+}
+
+form .field.error input {
+  border-color: #dc3545;
+}
+
+form input::placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+
+form .field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+form .field .icon{
+	left: 15px;
+	color: #bfbfbf;
+}
+
+form input[type="submit"]{
+	margin-top: -20px;
+  width: auto;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	background: #5372f0;
+	transition: backgroud 0.2s ease;
+}
+
+form input[type="submit"]:hover{
+	background: #2c52ed;
+}
+
+.form-right form input[type="text"] {
+  padding: 0 30px 0 50px;
+}
+
+.form-right form .field {
+  width: 12vw;
+}
+
+.teacher-table {
+  display: grid;
+  grid-template-columns: .25fr 1.25fr 2fr 1.25fr 1.25fr;
+  grid-template-rows: 4rem auto;
+  width: auto;
+  margin: 0 2rem 2rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
+  border-radius: 5px;
+}
+
+.teacher-table .column {
+  background-color: #5372f0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.teacher-table .id {
+  border-radius: 5px 0 0 0;
+}
+
+.teacher-table .password {
+  border-radius: 0 5px 0 0;
+}
+
+.teacher-table .column .table-header {
+  font-size: 1.2rem;
+}
+
+.teacher-table .data {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.teacher-table .data p{
+  margin: 1rem 0 0 0;
+  width: 100%;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid rgba(27, 31, 35, 0.15);
+  font-size: 1.1rem;
+}
+
+.teacher-table .data.last-row p {
+  border-bottom: none;
+}
+
+.table {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
+  border-radius: 5px;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.student-table {
+  display: grid;
+  grid-template-columns: .5fr 1.5fr 1fr .5fr 1fr;
+  grid-template-rows: 4rem;
+  width: auto;
+}
+
+.student-table .column {
+  background-color: #5372f0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.student-table .column.id {
+  border-radius: 5px 0 0 0;
+}
+
+.student-table .column.status {
+  border-radius: 0 5px 0 0;
+}
+
+.student-table.data {
+  display: grid;
+  grid-template-columns: .5fr 1.5fr 1fr .5fr 1fr;
+  grid-template-rows: auto;
+  width: auto;
+}
+
+.student-table.data .rows {
+  width: minmax(4rem, auto);
+  padding: 1rem 0 1rem 0;
+}
+
+.student-table.data .rows.status,
+.student-table.data .rows.year {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.student-table.data .rows.info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 15rem;
+}
+
+.student-table.data .rows.docs {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 9rem;
+}
+
+.student-table.data .rows.id {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+
+.student-table.data .rows.id {
+  border-radius: 0 0 0 5px;
+  text-align: center;
+}
+
+.student-table.data .rows.status {
+  border-radius: 0 0 5px 0;
+}
+
+.student-table.data {
+  border-bottom: 2px solid rgba(27, 31, 35, 0.15);
+}
+
+.table .student-table.data:last-of-type {
+  border-bottom: none;
+}
+
+.docs a {
+  text-decoration: none;
+  color: #5372f0;
+}
+
+.docs a:hover {
+  text-decoration: underline;
+}
+
+li {
+  margin-bottom: .5rem;
+}
+
+.export input[type="submit"]{
+	margin-top: -20px;
+  margin-left: 2rem;
+  height: 50px;
+  width: inherit;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	background: #5372f0;
+	transition: backgroud 0.2s ease;
+}
+
+.export input[type="submit"]:hover{
+	background: #2c52ed;
+}
+
+.rows {
+  font-size: 1.1rem;
+}
+
+.rows.status {
+  font-size: 1.15rem;
+}
+
+.Pending {
+  color: #ffbd00;
+}
+
+.Verified {
+  color: #0e952b;
+}
+
+.Rejected {
+  color: #ef233c;
+}
+
+/* '#3a86ff', '#ffbd00', '#ef233c' */
+
+.filters {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.filters .options {
+  padding-top: 1rem;
+  font-size: 1.1rem;
+}
+
+#sessionYear {
+  margin-right: 1rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options select {
+  border: 2px solid rgba(27, 31, 35, 0.15);
+  border-radius: 3px;
+  background: none;
+  padding: 2px;
+  font-size: 1rem;
+}
+
+.filter-submit {
+  margin-left: 1rem;
+}

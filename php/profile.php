@@ -25,7 +25,7 @@ $row = mysqli_fetch_array($result);
 
 <body>
 	<?php include("../html/nav.html"); ?>
-	<p class="header"><?php echo $_SESSION['user_name'] ?>'s Dashboard</p>
+	<p class="header"><?php echo $row['student_name'] ?>'s Dashboard</p>
 
 	<div class="student-card">
 		<!-- Contact Info -->

@@ -3,6 +3,24 @@ include("../php/ini.php");
 
 session_start();
 include 'database.php';
+
+
+//TODO: uncomment it after done developing
+// $isAdmin = false;
+// if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
+//     if (isset($_SESSION['email']) && $_SESSION['email'] === 'admin@admin.com' && isset($_SESSION['password']) && $_SESSION['password'] === 'admin@01P@$$W0RD') {
+//         $isAdmin = true;
+//     } else {
+//         // Redirect to the login page or show an error message
+//         header("Location: ../html/login.html");
+//         exit;
+//     }
+// } else {
+//     // Redirect to the login page or show an error message
+//     header("Location: ../html/login.html");
+//     exit;
+// }
+
 $currentYear = date("Y");
 $yearlyCounts = array();
 

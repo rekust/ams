@@ -3,6 +3,12 @@ include("../php/ini.php");
 
 session_start();
 include 'database.php';
+
+$teacherQuery = "SELECT teacher_name FROM teachers WHERE user_id = '{$_SESSION['user_id']}'";
+$teacherResult = mysqli_query($conn, $teacherQuery);
+$teacherRow = mysqli_fetch_assoc($teacherResult);
+$teacherName = $teacherRow['teacher_name'];
+
 $str = "select u.user_id, u.email, s.student_name, s.father_name, s.mother_name, s.phone, s.roll_number, s.rank, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.caste_certificate from students s join user u using(user_id) where s.status_id=1;";
 $result = mysqli_query($conn, $str);
 ?>
@@ -22,7 +28,7 @@ $result = mysqli_query($conn, $str);
 <body>
   <?php include("../html/navTeacher.html"); ?>
 
-  <p class="header"><?php echo $_SESSION['user_name'] ?>'s Dashboard</p>
+  <p class="header"><?php echo $teacherName ?>'s Dashboard</p>
   <p class="list-header">Unverified Student List</p>
   <div class="container">
     <?php while ($row = mysqli_fetch_array($result)) { ?>
