@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1-2.fc39
+-- version 5.2.1-4.fc40
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2024 at 03:21 PM
--- Server version: 10.5.23-MariaDB
--- PHP Version: 8.2.17
+-- Generation Time: May 14, 2024 at 05:19 PM
+-- Server version: 10.11.6-MariaDB
+-- PHP Version: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,15 +52,16 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`user_id`, `student_name`, `father_name`, `mother_name`, `phone`, `roll_number`, `rank`, `DOB`, `aadhaar`, `PRTC`, `marksheet`, `admit_card`, `birth_certificate`, `ration_card`, `caste_certificate`, `status_id`, `reg_date`) VALUES
-(1, 'user', 'f user', 'm user', 123456789, 1, 7, '2000-01-01', 'https://myaadhaar.uidai.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 2, '2024-04-14'),
+(1, 'user', 'f user', 'm user', 123456789, 1, 7, '2000-01-01', 'https://myaadhaar.uidai.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 'https://edistrict.tripura.gov.in/', 1, '2024-04-14'),
 (3, 'Tamojoy Chanda', 'Supratim Chanda', 'Sampita Neogi', 2147483647, 12, 4, '2004-08-21', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://edistrict.tripura.gov.in/', 'https://www.youtube.com/', 'https://www.youtube.com/', NULL, 2, '2025-04-15'),
 (4, 'Aaniketh Ghosh', 'Aaniketh\'s Father', 'Aaniketh\'s Mother', 2147483647, 123, 21, '2004-11-14', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://edistrict.tripura.gov.in/', 'https://chat.openai.com/', 'https://chat.openai.com/', 'https://chat.openai.com/', 2, '2025-04-14'),
-(5, 'Aisrang Debbarma', 'Aisrang\'s Father', 'Airrang\'s Mother', 123987456, 1234, 55, '2005-05-06', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://edistrict.tripura.gov.in/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 3, '2024-04-14'),
+(5, 'Aisrang Debbarma', 'Aisrang\'s Father', 'Airrang\'s Mother', 123987456, 1234, 55, '2005-05-06', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://edistrict.tripura.gov.in/', 'https://aniwatch.to/', 'https://aniwatch.to/', 'https://aniwatch.to/', 2, '2024-04-14'),
 (6, 'Manidipa', 'MFather', 'MMother', 92043098, 12345, 34, '2004-09-14', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'http://localhost:3000/MajorProject/completeProfile.html', 'https://www.google.com/search?q=student+dashboard&sca_esv=592504798&tbm=isch&sxsrf=AM9HkKnOGigtkOmM11OMdwBFmOOS8x7mHw:1703075289204&source=lnms&sa=X&ved=2ahUKEwjN143tgZ6DAxXbwTgGHZDKCigQ_AUoAXoECAEQAw&biw=1897&bih=1051&dpr=1.69#imgrc=YXLz6-tFmaTheM', 'https://edistrict.tripura.gov.in/', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 'http://localhost:3000/MajorProject/completeProfile.html', 2, '2024-04-14'),
 (9, 'Tester Name', 'Tester Father', 'Tester Mother', 1111111111, 1111111111, 111, '2000-11-11', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://edistrict.tripura.gov.in/', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 'https://www.msn.com/en-in/feed?ocid=wn_startbrowsing&form=MT00LJ&cvid=9a26ed9c858047dc90dcdb3ee5836f4e', 2, '2025-04-14'),
 (10, 'Khakachang Tripura', 'Father', 'Mother', 1234567890, 1234567890, 12, '2000-01-01', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 'https://www.google.com/', 2, '2024-04-14'),
 (12, 'Student Name', 'Father Name', 'Mother Name', 898989898, 2139580, 34, '2004-01-01', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 'https://workspace.google.com/products/meet/', 3, '2024-04-14'),
-(44, 'StudentName Surname', 'FatherName Surname', 'MotherName Surname', 1242343451, 12309, 12, '1999-01-01', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 3, '2024-04-18');
+(44, 'StudentName Surname', 'FatherName Surname', 'MotherName Surname', 1242343451, 12309, 12, '1999-01-01', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 'https://hianime.to/', 3, '2024-04-18'),
+(46, 'bye', 'bye', 'bye', 1234567899, 234, 3245, '2015-11-17', 'link', 'link', 'link', 'link', 'linkl', 'link', 'linlk', 1, '2024-05-14');
 
 -- --------------------------------------------------------
 
@@ -143,7 +144,8 @@ INSERT INTO `user` (`user_id`, `user_type_id`, `email`, `password`) VALUES
 (39, 2, '', ''),
 (42, 2, 'somemail@mail.com', 'Teacher@C0mm0nP@SS'),
 (43, 1, 'newemailuser@mail.com', 'Password@123'),
-(44, 1, 'myemail@mail.com', 'Password@123');
+(44, 1, 'myemail@mail.com', 'Password@123'),
+(46, 1, 'newemail21@mail.com', 'newP@ssword');
 
 -- --------------------------------------------------------
 
@@ -226,7 +228,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Constraints for dumped tables

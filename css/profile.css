@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -26,7 +26,8 @@ body {
 
 .contact,
 .docs {
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
   padding: 2.1rem;
   border-radius: 1rem;
   width: 49vw;
@@ -67,4 +68,29 @@ body {
 
 .docs .info-data a:hover {
   text-decoration: underline;
+}
+
+.re-apply-btn {
+  margin:  2.12rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.re-apply-btn button {
+  font-size: 1.1rem;
+  width: auto;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background: #5372f0;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  border-radius: 5px;
+  transition: backgroud 0.2s ease;
+}
+
+.re-apply-btn button:hover{
+	background: #2c52ed;
 }

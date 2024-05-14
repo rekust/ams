@@ -3,7 +3,7 @@ include("../php/ini.php");
 
 session_start();
 include_once 'database.php';
-$str = "select s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.ration_card, s.caste_certificate from user u join students s using (user_id) where user_id = {$_SESSION['user_id']};";
+$str = "select s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.ration_card, s.caste_certificate, s.status_id from user u join students s using (user_id) where user_id = {$_SESSION['user_id']};";
 $result = mysqli_query($conn, $str);
 $row = mysqli_fetch_array($result);
 ?>
@@ -96,7 +96,20 @@ $row = mysqli_fetch_array($result);
 			</div>
 		</div>
 	</div>
+	
+	<?php if ($row['status_id'] == 3) { ?>
+		<div class="re-apply-btn">
+			Re-submit Your Application:
+			<button class="action-button" onclick="reApply()">Apply</button>
+		</div>
+	<?php } ?>
 	</div>
 </body>
+
+<script>
+	function reApply(){
+		window.location.href = '../php/reapplication.php'
+	} 
+</script>
 
 </html>

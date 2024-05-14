@@ -1,9 +1,66 @@
+<?php
+session_start();
+include_once '../php/database.php';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Retrieve user inputs and sanitize them
+    $user_id = $_SESSION['user_id'];
+    $student_name = mysqli_real_escape_string($conn, $_POST['student_name']);
+    $father_name = mysqli_real_escape_string($conn, $_POST['father_name']);
+    $mother_name = mysqli_real_escape_string($conn, $_POST['mother_name']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $roll_number = mysqli_real_escape_string($conn, $_POST['roll_number']);
+    $rank = mysqli_real_escape_string($conn, $_POST['rank']);
+    $DOB = mysqli_real_escape_string($conn, $_POST['DOB']);
+    $aadhaar = mysqli_real_escape_string($conn, $_POST['aadhaar']);
+    $PRTC = mysqli_real_escape_string($conn, $_POST['PRTC']);
+    $marksheet = mysqli_real_escape_string($conn, $_POST['marksheet']);
+    $admit_card = mysqli_real_escape_string($conn, $_POST['admit_card']);
+    $birth_certificate = mysqli_real_escape_string($conn, $_POST['birth_certificate']);
+    $ration_card = mysqli_real_escape_string($conn, $_POST['ration_card']);
+    $caste_certificate = mysqli_real_escape_string($conn, $_POST['caste_certificate']);
+
+    // SQL query to update student details
+    $query = "UPDATE students 
+              SET student_name = '$student_name',
+                  father_name = '$father_name',
+                  mother_name = '$mother_name',
+                  phone = '$phone',
+                  roll_number = '$roll_number',
+                  rank = '$rank',
+                  DOB = '$DOB',
+                  aadhaar = '$aadhaar',
+                  PRTC = '$PRTC',
+                  marksheet = '$marksheet',
+                  admit_card = '$admit_card',
+                  birth_certificate = '$birth_certificate',
+                  ration_card = '$ration_card',
+                  caste_certificate = '$caste_certificate',
+                  status_id = 1
+              WHERE user_id = $user_id";
+
+    // Execute the query
+    $result = mysqli_query($conn, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Redirect to profile page
+        header("Location: ../php/profile.php");
+        exit; // Stop further execution
+    } else {
+        // Handle query failure
+        $error_message = "Error: " . mysqli_error($conn);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete Profile</title>
+    <title>Re-apply Your Details</title>
     <link rel="stylesheet" href="../css/register.css" />
     <link rel="stylesheet" href="../css/completeProfile.css" />
     <link
@@ -13,8 +70,8 @@
   </head>
   <body>
     <div class="container">
-      <header>Complete Your Profile</header>
-      <form action="../php/completeProfile.php" method="post">
+      <header>Re-submit Your Details</header>
+      <form action="" method="post">
         <div class="all-fields">
           <div class="sub-field-1">
             <p class="sub-header">Contact Information</p>

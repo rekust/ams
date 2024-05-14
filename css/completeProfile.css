@@ -20,7 +20,12 @@ form input[type="submit"]{
 	transition: backgroud 0.2s ease;
 }
 
+form input[type="dob"] {
+	color: #bfbfbf;
+}
+
 .sub-header {
 	font-size: 1.5rem;
 	padding: .8rem;
 }
+

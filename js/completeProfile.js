@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 
 const fields = [
-  "username", "father", "mother", "dob", "phone",
+  "username", "father", "mother", "phone",
   "roll", "rank", "adlink", "mlink", "amlink", "bclink", "plink", "rclink"
 ];
 
