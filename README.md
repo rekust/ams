@@ -1,7 +1,7 @@
-# VeriGate-AMS (Admission Management System)
+# AMS (Admission Management System)
 
 ## Overview
-Welcome to the VeriGate-AMS repository! This project is an **Admission Management System** designed to facilitate document verification for students and teachers. It provides separate panels for teachers, administrators, and students, streamlining communication and administrative tasks.
+Welcome to the AMS repository! This project is an **Admission Management System** designed to facilitate document verification for students and teachers. It provides separate panels for teachers, administrators, and students, streamlining communication and administrative tasks.
 
 ## Features
 - **User Panels**:
@@ -26,7 +26,7 @@ Welcome to the VeriGate-AMS repository! This project is an **Admission Managemen
 4. Run the application and explore the different panels.
 
 ## Contribution
-Contributions are welcome! If you'd like to enhance VeriGate, fork the repository, make your changes, and submit a pull request.
+Contributions are welcome! If you'd like to enhance AMS, fork the repository, make your changes, and submit a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/rekust/ams) file for details.
