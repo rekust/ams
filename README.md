@@ -17,7 +17,6 @@ Welcome to the AMS repository! This project is an **Admission Management System*
 - **PHP 8.1**: Robust and dynamic server-side scripting.
 - **Apache**: High-performance HTTP server.
 - **MariaDB**: SQL database for reliability and compatibility.
-- **Redis with PHPRedis**: Advanced key-value store for rapid data handling and caching.
 
 ## Getting Started
 1. Clone the repository to your local machine: `git clone https://github.com/rekust/ams.git`
