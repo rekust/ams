@@ -1,65 +1,66 @@
 const form = document.querySelector("form"),
-emailField = form.querySelector(".email"),
-emailInput = emailField.querySelector("input"),
-passwordField = form.querySelector(".password"),
-passwordInput = passwordField.querySelector("input");
+    emailField = form.querySelector(".email"),
+    emailInput = emailField.querySelector("input"),
+    passwordField = form.querySelector(".password"),
+    passwordInput = passwordField.querySelector("input"),
+    emailErrorTxt = emailField.querySelector(".error-txt"),
+    passwordErrorTxt = passwordField.querySelector(".error-txt");
 
-form.onsubmit = (event) => {
-	event.preventDefault();
+// Function to get the URL parameter value
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(window.location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
 
-	if (emailInput.value == "") {
-		emailField.classList.add("shake", "error");
-	} else {
-		checkEmail();
-	}
+// Check for the error parameter in the URL
+const errorMessage = getUrlParameter('error');
+if (errorMessage) {
+    emailErrorTxt.innerText = errorMessage;
+    passwordErrorTxt.innerText = errorMessage;
+}
 
-	if (passwordInput.value == "") {
-		passwordField.classList.add("shake", "error");
-	}
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
 
-	emailInput.onkeyup = () => {
-		if (emailInput.value != "") {
-			emailField.classList.remove("error");
-		}
-	};
+    if (emailInput.value.trim() === "") {
+        emailErrorTxt.innerText = "Email can't be blank!";
+        emailField.classList.add("shake", "error");
+        isValid = false;
+    } else {
+        checkEmail();
+    }
 
-	passwordInput.onkeyup = () => {
-		if (passwordInput.value != "") {
-			passwordField.classList.remove("error");
-		}
-	};
+    if (passwordInput.value.trim() === "") {
+        passwordErrorTxt.innerText = "Password can't be blank!";
+        passwordField.classList.add("shake", "error");
+        isValid = false;
+    }
 
-	// setTimeout(() => {
-	// 	emailField.classList.remove("shake", "error");
-	// 	passwordField.classList.remove("shake", "error");
-	// }, 1000);
+    if (isValid) {
+        form.submit();
+    }
+});
 
-	emailInput.onkeyup = () => {
-		checkEmail();
-	};
+emailInput.addEventListener("input", () => {
+    emailErrorTxt.innerText = "";
+    emailField.classList.remove("error");
+    checkEmail();
+});
 
-	function checkEmail() {
-		let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,4}$/;
-		if (!emailInput.value.match(pattern)) {
-			let errorTxt = emailField.querySelector(".error-txt");
-			emailInput.value != ""
-					? (errorTxt.innerText = "Enter a valid Email!")
-					: (errorTxt.innerText = "Email can't be blank!");
-			emailField.classList.add("error");
-		} else {
-			emailField.classList.remove("error");
-		}
-	}
+passwordInput.addEventListener("input", () => {
+    passwordErrorTxt.innerText = "";
+    passwordField.classList.remove("error");
+});
 
-	passwordInput.onkeyup = () => {
-		if (passwordInput.value == "") {
-			passwordField.classList.add("error");
-		} else {
-			passwordField.classList.remove("error");
-		}
-	};
-
-	if (!emailField.classList.contains("error") && !passwordField.classList.contains("error")) {
-		form.submit();
-	}
-};
+function checkEmail() {
+    let pattern = /^\S+@\S+\.\S+$/;
+    if (!emailInput.value.match(pattern)) {
+        emailErrorTxt.innerText = "Enter a valid Email!";
+        emailField.classList.add("error");
+    } else {
+        emailField.classList.remove("error");
+    }
+}

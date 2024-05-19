@@ -142,3 +142,16 @@ form input[type="submit"]:hover{
 	background: #2c52ed;
 }
 /* login.css/register.css end */
+
+.reset-link {
+	margin-top: .5rem;
+}
+
+
+
+.error-msg {
+	color: #dc3545;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	text-align: center;
+}

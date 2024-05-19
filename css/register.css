@@ -137,3 +137,11 @@ form input[type="submit"]:hover{
 	background: #2c52ed;
 }
 /* login.css/register.css end */
+
+.sec-q {
+	width: 15rem;
+	font-size: 1.05rem;
+	border: none;
+	border-radius: .15rem;
+	border: rgba(27, 31, 35, 0.15);
+}

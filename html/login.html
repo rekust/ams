@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-
-	<link rel="stylesheet" href="../css/login.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-	<div class="container">
-		<header>Login</header>
-		<form action="../php/login.php" method="post">
-
-			<div class="field email">
-				<div class="input-area">
-					<input type="text" name="email" id="#" placeholder="Email Address">
-					<i class="icon fas fa-envelope"></i>
-					<i class="error error-icon fas fa-exclamation-circle"></i>
-				</div>
-				<div class="error error-txt">Email can't be blank!</div>
-			</div>
-
-			<div class="field password">
-				<div class="input-area">
-					<input type="password" name="password" id="#" placeholder="Password">
-					<i class="icon fas fa-lock"></i>
-					<i class="error error-icon fas fa-exclamation-circle"></i>
-				</div>
-				<div class="error error-txt">Password can't be blank!</div>
-			</div>
-
-			<!-- <div class="forgot-pass-link"><a href="#">Forgot Password?</a></div> -->
-			<input type="submit" value="Login">
-
-		</form>
-
-		<div class="register-link">Don't have an Account? <a href="../html/register.html">Register</a></div>
-
-	</div>
-
-	<script src="../js/login.js"></script>
+    <div class="container">
+        <header>Login</header>
+        <form action="../php/login.php" method="post">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" name="email" id="email" placeholder="Email Address">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error-txt"></div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error-txt"></div>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="register-link">Don't have an Account? <a href="../html/register.html">Register</a></div>
+        <div class="reset-link">Forgot Password? <a href="../html/reset_password.html">Reset Password</a></div>
+    </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>
