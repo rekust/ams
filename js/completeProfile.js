@@ -1,9 +1,6 @@
 const form = document.querySelector("form");
 
-const fields = [
-  "username", "father", "mother", "phone",
-  "roll", "rank", "adlink", "mlink", "amlink", "bclink", "plink", "rclink"
-];
+const fields = ["username", "father", "mother", "phone", "roll", "rank", "adlink", "mlink", "amlink", "bclink", "plink", "rclink", "image"];
 
 const validateField = (field) => {
   const fieldElement = form.querySelector(`.${field}`);

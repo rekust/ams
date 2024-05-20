@@ -145,3 +145,7 @@ form input[type="submit"]:hover{
 	border-radius: .15rem;
 	border: rgba(27, 31, 35, 0.15);
 }
+
+.error-message {
+	color: #dc3545;
+}

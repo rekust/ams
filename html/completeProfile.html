@@ -14,9 +14,9 @@
   <body>
     <div class="container">
       <header>Complete Your Profile</header>
-      <form action="../php/completeProfile.php" method="post">
+      <form action="../php/completeProfile.php" method="post" enctype="multipart/form-data">
         <div class="all-fields">
-          <div class="sub-field-1">
+          <div class="sub-field-1"> 
             <p class="sub-header">Contact Information</p>
   
             <div class="field username">
@@ -47,7 +47,7 @@
             </div>
   
             <div class="field dob">
-              <div class="input-area">
+              <div class="input-area"> 
                 <input type="date" name="DOB" id="#"/>
                 <i class="icon fas fa-calendar-days"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
@@ -148,13 +148,37 @@
               </div>
               <div class="error error-txt">Caste Certificate Link can't be blank!</div>
             </div>
-          
           </div>
+        </div>
+
+        <div class="field image">
+          <div class="input-area">
+            <input type="file" name="photo" id="photo" accept="image/*" />
+            <label for="photo"><span>Upload Your Image [jpeg/jpg/png - Max File Size: 2MB]</span></label>
+            <i class="icon fas fa-image"></i>
+            <i class="error error-icon fas fa-exclamation-circle"></i>
+          </div>
+          <div class="error error-txt">Photo can't be blank!</div>
         </div>
         <input type="submit" value="Submit" />
       </form>
     </div>
-
+  
     <script src="../js/completeProfile.js"></script>
+    <script>
+      // document.getElementById('profileForm').onsubmit = function(event) {
+      //   const photo = document.getElementById('photo');
+      //   if (photo.files[0].size > 2 * 1024 * 1024) { // 2MB size limit
+      //     event.preventDefault();
+      //     alert('File size must be less than 2MB');
+      //   }
+      // };
+  
+      document.getElementById('photo').addEventListener('change', function() {
+        const label = this.nextElementSibling.querySelector('span');
+        const fileName = this.files[0] ? this.files[0].name : 'Upload Your Image';
+        label.textContent = fileName;
+      });
+    </script>
   </body>
-</html>
+  </html>

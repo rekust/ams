@@ -8,9 +8,23 @@ const form = document.querySelector("form"),
     newPasswordField = form.querySelector(".new-password"),
     newPasswordInput = newPasswordField.querySelector("input");
 
+// Function to get the URL parameter value
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Check for the error parameter in the URL
+const errorMessage = getUrlParameter('error');
+if (errorMessage) {
+    const errorElement = document.createElement('div');
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add('error-message');
+    form.insertAdjacentElement('beforebegin', errorElement);
+}
+
 form.onsubmit = (event) => {
     event.preventDefault();
-
     let isValid = true;
 
     if (emailInput.value === "") {
@@ -74,10 +88,9 @@ newPasswordInput.addEventListener('keyup', () => {
 function checkEmail() {
     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,4}$/;
     let errorTxtE = emailField.querySelector(".error-txt");
+
     if (!emailInput.value.match(pattern)) {
-        emailInput.value !== ""
-            ? (errorTxtE.innerText = "Enter a valid Email!")
-            : (errorTxtE.innerText = "Email can't be blank!");
+        emailInput.value !== "" ? (errorTxtE.innerText = "Enter a valid Email!") : (errorTxtE.innerText = "Email can't be blank!");
         emailField.classList.add("error");
     } else {
         emailField.classList.remove("error");

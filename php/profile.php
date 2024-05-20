@@ -3,7 +3,7 @@ include("../php/ini.php");
 
 session_start();
 include_once 'database.php';
-$str = "select s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.ration_card, s.caste_certificate, s.status_id from user u join students s using (user_id) where user_id = {$_SESSION['user_id']};";
+$str = "SELECT s.student_name, s.phone, u.email, s.father_name, s.mother_name, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.roll_number, s.rank, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.ration_card, s.caste_certificate, s.status_id, s.photo FROM user u JOIN students s USING (user_id) WHERE user_id = {$_SESSION['user_id']};";
 $result = mysqli_query($conn, $str);
 $row = mysqli_fetch_array($result);
 ?>
@@ -25,7 +25,10 @@ $row = mysqli_fetch_array($result);
 
 <body>
 	<?php include("../html/nav.html"); ?>
-	<p class="header"><?php echo $row['student_name'] ?>'s Dashboard</p>
+	<div class="top">
+		<img class="profile-picture" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>" alt="Profile Picture">
+		<p class="header"><?php echo $row['student_name'] ?>'s Dashboard</p>
+	</div>
 
 	<div class="student-card">
 		<!-- Contact Info -->
@@ -96,7 +99,7 @@ $row = mysqli_fetch_array($result);
 			</div>
 		</div>
 	</div>
-	
+
 	<?php if ($row['status_id'] == 3) { ?>
 		<div class="re-apply-btn">
 			Re-submit Your Application:
@@ -107,9 +110,9 @@ $row = mysqli_fetch_array($result);
 </body>
 
 <script>
-	function reApply(){
+	function reApply() {
 		window.location.href = '../php/reapplication.php'
-	} 
+	}
 </script>
 
 </html>

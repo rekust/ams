@@ -23,10 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Error: " . mysqli_error($conn);
             }
         } else {
-            echo "Incorrect security answer or question.";
+            $error = "Invalid information";
+            header("Location: ../html/resetPassword.html?error=" . urlencode($error));
+            exit;
         }
     } else {
-        echo "All fields are required.";
+        $error = "All fields are required.";
+        header("Location: ../html/resetPassword.html?error=" . urlencode($error));
+        exit;
     }
 }
 ?>

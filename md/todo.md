@@ -1,8 +1,6 @@
 - create log file for errors: `done`
 - make an admin panel: `done`
-- add message box functionality for adding reason in teachers panel
-- add notifications tab for students
-- notification on phone or email
-- add functionality to re-upload documents, re-apply the application
-- add option for photo upload for profile
+- notification on phone or email: `done`
+- add functionality to re-upload documents, re-apply the application: `done`
+- add option for photo upload for profile: `done`
 - add functionality on admin panel for exporting the whole data for current session in a csv: `done`

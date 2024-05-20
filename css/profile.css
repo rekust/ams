@@ -94,3 +94,20 @@ body {
 .re-apply-btn button:hover{
 	background: #2c52ed;
 }
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: .1rem;
+  max-width: 90vw;
+  margin-bottom: 1.5rem;
+}
+
+.profile-picture {
+  width: 7rem;
+  height: 7rem;
+  object-fit: fill;
+  border-radius: 50%;
+  margin-left: 2.5rem;
+}

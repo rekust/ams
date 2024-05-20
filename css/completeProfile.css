@@ -15,7 +15,7 @@ form input[type="submit"]{
 	width: 20vw;
 	border: none;
 	color: #fff;
-	cursor: pointer;
+	cursor: pointer; 
 	background: #5372f0;
 	transition: backgroud 0.2s ease;
 }
@@ -29,3 +29,42 @@ form input[type="dob"] {
 	padding: .8rem;
 }
 
+.field.image .input-area {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.field.image input{
+	display: none;
+}
+
+label[for="photo"]{
+	border-radius: 5px;
+	border: 1px solid #bfbfbf;
+	border-bottom-width: 2px;
+	width: 100%;
+	height: 50px;
+	color: #bfbfbf;
+	font-size: 17px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+label[for="photo"]:hover {
+	border: 1px solid #5372f0;
+	border-bottom-width: 2px;
+	color: #5372f0;
+}
+
+.field.dob input{
+	cursor: pointer;
+}
+
+.field.dob input[type="date"]::-webkit-calendar-picker-indicator {
+	color: #bfbfbf;
+
+}
