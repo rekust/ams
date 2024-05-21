@@ -68,3 +68,9 @@ label[for="photo"]:hover {
 	color: #bfbfbf;
 
 }
+
+.cp-info {
+	margin-top: 10px;
+	color:  #5372f0;
+	font-size: 1.1rem;
+}

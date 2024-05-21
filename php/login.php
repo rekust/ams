@@ -34,11 +34,11 @@ if (isset($_SESSION['user_type'])) {
     } elseif ($_SESSION['user_type'] == "teacher") {
         header("location:../php/panel_uv.php");
         exit;
+    } elseif ($_SESSION['user_type'] == "admin") {
+        // Redirect to the admin panel
+        header("location:../php/admin.php");
+        exit;
     }
-} elseif ($email == "admin@admin.com" && $password == "admin@01P@SSW0RD") {
-    // Redirect to the admin panel
-    header("location:../php/admin.php");
-    exit;
 }
 
 header("location:../html/login.html");

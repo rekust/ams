@@ -10,10 +10,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link rel="icon" href="../images/AMS.png" type="image/png">
   </head>
   <body>
     <div class="container">
       <header>Complete Your Profile</header>
+      <p class="cp-info">Please store the documents in your Google Drive and share the file link here.</p>
       <form action="../php/completeProfile.php" method="post" enctype="multipart/form-data">
         <div class="all-fields">
           <div class="sub-field-1"> 
@@ -154,7 +156,7 @@
         <div class="field image">
           <div class="input-area">
             <input type="file" name="photo" id="photo" accept="image/*" />
-            <label for="photo"><span>Upload Your Image [jpeg/jpg/png - Max File Size: 2MB]</span></label>
+            <label for="photo"><span>Upload Your Image [jpeg/jpg/png - Max File Size: 1MB]</span></label>
             <i class="icon fas fa-image"></i>
             <i class="error error-icon fas fa-exclamation-circle"></i>
           </div>

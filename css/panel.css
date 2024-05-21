@@ -16,17 +16,18 @@ body {
 .header {
   padding: 2rem;
   text-align: left;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .list-header {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-left: 2rem;
 }
 
 .sub-header {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: left;
+  color: #c82333;
 }
 
 .student {
@@ -180,4 +181,12 @@ body {
   resize: none;
   width: 30rem;
   height: 10rem;
+}
+
+.profile-picture {
+  width: 7rem;
+  height: 7rem;
+  object-fit: fill;
+  border-radius: 50%;
+  margin-left: 2.5rem;
 }

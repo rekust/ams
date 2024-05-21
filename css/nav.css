@@ -8,8 +8,8 @@
 }
 
 .navbar {
-	top: 0;
-	position: sticky;
+  top: 0;
+  position: sticky;
   min-width: 100vw;
   height: 8vh;
   display: flex;
@@ -22,15 +22,18 @@
 }
 
 .navbar a {
-	text-decoration: none;
-	color: #000;
-	font-weight: 400;
-	font-size: 1.2rem;
-	cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.nav-left{
-	display: flex;
-	gap: 2rem;
+.navbar a:hover {
+  color: #5372f0;
 }
 
+.nav-left {
+  display: flex;
+  gap: 2rem;
+}

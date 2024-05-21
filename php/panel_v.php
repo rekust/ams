@@ -9,7 +9,7 @@ $teacherResult = mysqli_query($conn, $teacherQuery);
 $teacherRow = mysqli_fetch_assoc($teacherResult);
 $teacherName = $teacherRow['teacher_name'];
 
-$str = "select u.user_id, u.email, s.student_name, s.father_name, s.mother_name, s.phone, s.roll_number, s.rank, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.caste_certificate from students s join user u using(user_id) where s.status_id=2;";
+$str = "select u.user_id, u.email, s.student_name, s.father_name, s.mother_name, s.phone, s.roll_number, s.rank, TIMESTAMPDIFF(YEAR, s.DOB, CURDATE()) AS age, s.DOB, s.aadhaar, s.PRTC, s.marksheet, s.admit_card, s.birth_certificate, s.caste_certificate, s.ration_card, s.photo from students s join user u using(user_id) where s.status_id=2;";
 $result = mysqli_query($conn, $str);
 ?>
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ $result = mysqli_query($conn, $str);
 
   <link rel="stylesheet" href="../css/panel.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="../images/AMS.png" type="image/png">
 </head>
 
 <body>
@@ -105,6 +106,7 @@ $result = mysqli_query($conn, $str);
           </div>
 
           <div class="btn-wrapper">
+          <img class="profile-picture" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>" alt="Profile Picture">
             <p class="student-name"><?php echo $row['student_name'] ?></p>
             <div class="btn">
               <form action="../php/status_v.php" method="post" id="my-form-<?php echo $row['user_id'] ?>">
